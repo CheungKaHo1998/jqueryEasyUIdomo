@@ -63,3 +63,82 @@ open              forceOpen            在'forceOpen'参数设置为true的时�
 close             forceClose           在'forceClose'参数设置为true的时候，关闭面板时将跳过'onBeforeClose'回调函数
 setTitle          title                设置面板头的标题文本
 refresh           href                 刷新面板来装在远程数据。如果怕'href'属性有了新配置，它将重写旧的'href'属性
+
+代码示例
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>EASYUI组件方法的调用</title>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+	<script type="text/javascript">
+		//显示panel组件
+		function	Makepanel() {
+			$("#p1").panel({
+				width:550,
+				height: 150,
+				title: "默认标题",
+				minimizable: true,
+				maximizable: true
+               });
+		}
+		//显示修改标题LinkButton
+		function MakeTitleLb() {
+			$("#btnTitle").linkbutton({
+                iconCls: 'icon-redo',
+                onClick: function () {
+                    var title = $("#txtTitle").val();
+                    $("#p1").panel("setTitle", title);
+                }
+            });
+
+		}
+		//实列化关闭面板linkbutton
+		function MakeCloseLb() {
+			$("#btnClose").linkbutton({
+				iconCls: 'icon-no',
+				onClick: function () {
+					$.messager.confirm('关闭确认', '你确认关闭面板吗？', function (flag) {
+						if (flag) {
+							//调用组件close方法，关闭之前不执行onbeforeClose事件的绑定函数
+							$("#p1").panel("close", false);
+						}
+					})
+				}
+			});
+
+		}
+		//实列化打开面板linkbutton
+		function MakeOpenLb() {
+			$("#btnOpen").linkbutton({
+				iconCls: 'icon-ok',
+				onClick: function () {
+					//调用组件的open方法，打开面板时不执行onbeforeopen事件的绑定函数
+					$("#p1").panel("open", false)
+				}
+           });
+
+       }
+
+		$(function () {
+			Makepanel();
+			MakeTitleLb();
+			MakeCloseLb();
+			MakeOpenLb();
+
+		});
+
+	</script>
+</head>
+<body>
+  <div id="p1"></div>
+  请输入标题：<input id="textTitle" type="text"/>
+	          <a id="btnTitle" href="#">修改标题</a>
+	<a id="btnOpen" href="#" >打开</a>
+	<a id="btnClose" href="#">关闭</a>
+</body>
+</html>
