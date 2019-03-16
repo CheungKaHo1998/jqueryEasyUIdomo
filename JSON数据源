@@ -74,3 +74,53 @@ key2:value2,
 </body>
 </html>
 
+
+数据结构语法:以[开始，以]结束，用逗号分割
+语法
+[
+{
+key1:value1,
+key2:value2,
+.....
+},
+{
+key3:value3,
+key4:value4,
+.....
+}
+]
+
+代码示例
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>JSON数组结构</title>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+	<script type="text/javascript">
+		var customerObj = [
+			{ "Name": "张明", "Address": "武汉东西湖大道", "Age": 32 },
+			{ "Name": "张三", "Address": "武汉硚口", "Age": 42 },
+			{ "Name": "李四", "Address": "武汉江滩", "Age": 22 },
+			{ "Name": "王明", "Address": "武汉光谷软件园", "Age": 42 }
+		];
+		$(function () {
+			$.each(customerObj, function (i, item) {
+				document.write("会员：" + (i + 1) + ":<br/> ");
+				document.write("姓名：" + item.Name);
+				document.write("地址：" + item.Address);
+				document.write("年龄：" + item.Age+"<br/>");
+
+			});
+
+		})
+	 </script>
+</head>
+<body>
+
+</body>
+</html>
