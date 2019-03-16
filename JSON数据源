@@ -37,3 +37,40 @@ key2:value2,
 
 </body>
 </html>
+
+ 使用对象类型和封装对象
+ 
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>
+		值类型使用对象类型
+	</title>
+		<script type="text/javascript" src="easyui/jquery.min.js"></script>
+		<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+		<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+		<script type="text/javascript">
+			var customerObj = {
+				"Name": "张敏",
+				"Address": {
+					"Country": "中国",
+					"Province": "湖北",
+					"City": "武汉",
+					"Street": "关山大道"
+				},
+				"Age": 32
+			};
+			$(function () {
+				document.write("姓名:" + customerObj.Name + "</br>");
+				document.write("地址:" + customerObj.Address.Country + customerObj.Address.Province + customerObj.Address.City + customerObj.Address.Street + "</br>");
+				document.write("年龄:" + customerObj.Age);
+			});
+		</script>
+</head>
+<body>
+</body>
+</html>
+
