@@ -6,3 +6,44 @@ $("#ID选择器").渲染Easyui组件名称(
   实现代码
  }
 );
+
+LinkeButton组件事件
+事件名：onclick
+事件参数：none
+描述：在点击按钮时候出发
+
+事件实列
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Linkbutton事件</title>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+	<script type="text/javascript">
+		//实现删除按钮组件事件
+		function MakeDel() {
+			$("#btnDal").linkbutton({
+				iconCls: 'icpn-remove',
+				onClick: function () {
+					$.messager.confirm('删除确认', '确认删除该记录吗？', function (flag) {
+						if (flag) {
+							$.messager.alert("提示", "执行删除操作.....", "info");
+						}
+					});
+				}
+			});
+		}
+		$(function () {
+			MakeDel();
+		});
+	</script>
+</head>
+<body>
+	//easyui组件按钮
+	<a id="btnDal">删除</a>
+</body>
+</html>
