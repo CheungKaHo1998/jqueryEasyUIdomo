@@ -1,0 +1,51 @@
+Dialog对话框组件
+Dialog对话框是一种特殊类型的窗口，他的顶部有一个工具栏，底部有一个按钮。对话框窗口默认右上角只有一个关闭按钮，用户可以配置对话框的属性显示其他工具按钮，如collapsible，minimizable，maximizable按钮等
+组件广泛应用与项目开发中的对话框窗口和登录窗口的创建，Dialog组件和panel组件一样也是用过<div>标签渲染的。
+属性名       属性值类型       描述
+  title         string      对话框窗口标题文本。
+  collapsible   boolean     定义是否显示可折叠按钮。
+  minimizable   boolean     定义是否显示最小化按钮。
+  maximizable   boolean     定义是否显示最大化按钮。
+  toolbar     array,selector    设置对话框窗口顶部工具栏，可用值有：
+                                1) 一个数组，每一个工具栏中的工具属性都和linkbutton相同。
+                                2) 一个选择器指定工具栏。 
+  buttons     array,selector    对话框窗口底部按钮，可用值有：
+                                1) 一个数组，每一个按钮的属性都和linkbutton相同。
+                                2) 一个选择器指定按钮栏。 
+  modal         boolean        定义是否将窗体显示为模式化窗口
+  
+  代码示例
+  <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Dialog组件</title>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+	<script type="text/javascript">
+		//实列化dialog组件
+		function MakeDialog1() {
+			$("#d1").dialog({
+				width: 500,
+				height: 200,
+				title: "dialog对话框",
+				collapsible: true,
+				minimizable: true,
+				maximizable: true,
+				iconCls: "icon-edit",
+				modal: true
+			});
+		}
+		$(function(){
+			MakeDialog1();
+		});
+
+	</script>
+</head>
+<body>
+	<div id="d1" style="padding:20px; font-size:15px">对话框</div>
+</body>
+</html>
