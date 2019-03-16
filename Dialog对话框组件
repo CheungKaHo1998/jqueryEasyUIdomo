@@ -49,3 +49,14 @@ Dialog对话框是一种特殊类型的窗口，他的顶部有一个工具栏�
 	<div id="d1" style="padding:20px; font-size:15px">对话框</div>
 </body>
 </html>
+
+
+Dialogde toolbar属性介绍
+toolbar属性是一个数组，每个数组元素的属性都和LINKBUTTON相同，包含两个主要属性说明
+属性名           属性类型           描述
+text              string           按钮文字
+iconCls           string           显示在按钮文字左侧的图标（16X16）的css类
+除了text和iconCls属性外，还有handler单机事件，语法：
+handler：function（）{
+ //单机按钮后，执行代码
+}
