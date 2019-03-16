@@ -1,4 +1,6 @@
 EasyUI组件的事件方法的绑定
+
+
 触发Easyui组件事件时，有时候需要执行对应的方法，为组件绑定事件方法
 语法：
 $("#ID选择器").渲染Easyui组件名称(
@@ -47,3 +49,17 @@ LinkeButton组件事件
 	<a id="btnDal">删除</a>
 </body>
 </html>
+
+
+
+
+EasyUI组件方法的的调用
+语法：
+$("#ID选择器").渲染Easyui组件的名称（"方法名称",参数集合）;
+Pannel组件的常用方法
+方法名            方法参数               描述
+resize            options              设置面板大小和布局。参数对象包含下列属性：width：新的面板宽度。height：新的面板高度
+open              forceOpen            在'forceOpen'参数设置为true的时候，打开时将跳过'onBeforeOpen'回调函数
+close             forceClose           在'forceClose'参数设置为true的时候，关闭面板时将跳过'onBeforeClose'回调函数
+setTitle          title                设置面板头的标题文本
+refresh           href                 刷新面板来装在远程数据。如果怕'href'属性有了新配置，它将重写旧的'href'属性
