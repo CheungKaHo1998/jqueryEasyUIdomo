@@ -1,2 +1,39 @@
 JSON是一种轻量级的数据交换格式，非常小号适合和服务器程序与JavaScript的的的交换
 JSON可以传输一个简单的string文本、number整数或浮点数、boolean布尔，也可以数组或者是一个复杂的Object对象
+JSON使用对象和数组两种结构来描述数据
+
+语法：
+{
+key1:value1,
+key2:value2,
+...
+}
+ 
+ 对象结构以{开始，以}结束，中间部分由0到多个逗号分隔的key(关键字)：value(值)对构成的，key(关键字)是字符串类型，值就可以是很多种了
+ 代码示例
+
+创建一个JSON对象描述会员的基本信息并在页面上输出
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>创建一个JSON对象描述会员的基本信息并在页面输出</title>
+    
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+	<script type="text/javascript">
+	 var customerObj ={"Name":"张敏","Address":"武汉关山大道","Age":32};
+	  $(function(){
+	   document.write("姓名："+customerObj.Name+"<br/>");
+		  document.write("地址:" + customerObj.Address + "<br/>");
+	   document.write("年龄:" + customerObj.Age);
+	  });
+	</script>
+</head>
+<body>
+
+</body>
+</html>
